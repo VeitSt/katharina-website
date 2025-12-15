@@ -14,39 +14,37 @@
     line-height: 1.7;
   }
 
-  /* Hero Header */
+  /* Header */
   header {
     position: relative;
     height: 500px;
-    background: url('images/portrait.jpg') center top / cover no-repeat;
+    background-color: #1f2a33;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
   }
-  header::after {
-    content: "";
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background-color: rgba(0,0,0,0.4); /* Overlay für bessere Lesbarkeit */
+
+  header .portrait {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   }
-  header .hero-text {
-    position: relative;
-    z-index: 1;
-    padding: 1rem 2rem;
-    border-radius: 6px;
-  }
-  header h1 {
+
+  header .hero-text h1 {
     font-family: "Georgia", serif;
     font-size: 3rem;
     margin: 0;
     letter-spacing: 1px;
   }
-  header p {
+
+  header .hero-text p {
     font-size: 1.3rem;
     margin-top: 0.5rem;
   }
@@ -70,16 +68,14 @@
     text-decoration: underline;
   }
 
-  /* Sections */
+  /* Sektionen */
   section {
     max-width: 900px;
     margin: 4rem auto;
     padding: 2rem;
   }
-  section:nth-of-type(even) {
+  section:nth-of-type(even):not(.landschaft-bg) {
     background-color: #f4f4f2;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
   }
   h2 {
     font-family: "Georgia", serif;
@@ -90,6 +86,28 @@
   }
   ul {
     padding-left: 1.2rem;
+  }
+
+  /* Landschafts-Sektion */
+  .landschaft-bg {
+    position: relative;
+    background: url('images/landschaft.jpg') center / cover no-repeat;
+    color: #fff;
+    padding: 6rem 2rem;
+  }
+  .landschaft-bg::before {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.3); /* Overlay */
+    z-index: 1;
+  }
+  .landschaft-bg > * {
+    position: relative;
+    z-index: 2;
   }
 
   /* Medien */
@@ -166,20 +184,17 @@
 
   /* Responsive */
   @media (max-width: 800px) {
-    header {
-      height: 400px;
-    }
     header h1 {
       font-size: 2.2rem;
     }
     header p {
       font-size: 1.1rem;
     }
+    .landschaft-bg {
+      padding: 4rem 2rem;
+    }
   }
   @media (max-width: 500px) {
-    header {
-      height: 300px;
-    }
     header h1 {
       font-size: 1.8rem;
     }
@@ -201,6 +216,7 @@
 <body>
 
 <header>
+  <img src="images/portrait.jpg" alt="Katharina Königer Portrait" class="portrait">
   <div class="hero-text">
     <h1>Katharina Königer</h1>
     <p>Sopran · Klassischer Gesang · Konzert & Oratorium</p>
@@ -216,15 +232,10 @@
   <a href="#kontakt">Kontakt</a>
 </nav>
 
-<section id="vita">
+<section class="landschaft-bg" id="vita">
   <h2>Vita</h2>
-  <p>Katharina Königer ist eine klassisch ausgebildete Sopranistin mit Schwerpunkt auf barockem
-     und geistlichem Repertoire. Ihre Ausbildung absolvierte sie an der Berufsfachschule für Musik
-     Sulzbach-Rosenberg mit Schwerpunkt Gesang und Chorleitung sowie an der Hochschule für Musik
-     Nürnberg, wo sie Gesang/Vokalpädagogik und Elementare Musikpädagogik mit Fokus Barockgesang studierte.</p>
-  <p>Als Sängerin ist sie regelmäßig als Solistin in Konzerten, Oratorien und kirchenmusikalischen
-     Aufführungen zu hören. Ihre künstlerische Arbeit führt sie in verschiedene Kirchen und
-     Konzertorte der Metropolregion Nürnberg und darüber hinaus.</p>
+  <p>Katharina Königer ist eine klassisch ausgebildete Sopranistin mit Schwerpunkt auf barockem und geistlichem Repertoire. Ihre Ausbildung absolvierte sie an der Berufsfachschule für Musik Sulzbach-Rosenberg mit Schwerpunkt Gesang und Chorleitung sowie an der Hochschule für Musik Nürnberg, wo sie Gesang/Vokalpädagogik und Elementare Musikpädagogik mit Fokus Barockgesang studierte.</p>
+  <p>Als Sängerin ist sie regelmäßig als Solistin in Konzerten, Oratorien und kirchenmusikalischen Aufführungen zu hören. Ihre künstlerische Arbeit führt sie in verschiedene Kirchen und Konzertorte der Metropolregion Nürnberg und darüber hinaus.</p>
   <p class="small"><em>Sie ist zudem als Gesangslehrerin tätig – Informationen zu Unterricht und Workshops sind auf Anfrage erhältlich.</em></p>
 </section>
 
