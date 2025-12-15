@@ -14,7 +14,7 @@
     line-height: 1.7;
   }
 
-  /* Header mit Portrait links, Text rechts, Landschaft im Hintergrund */
+  /* Header mit großem Portrait links */
   header {
     display: flex;
     align-items: center;
@@ -22,33 +22,22 @@
     flex-wrap: wrap;
     gap: 2rem;
     text-align: left;
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
     position: relative;
-    background: url('images/landschaft.jpg') center/cover no-repeat;
-  }
-  header::before {
-    content: "";
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background-color: rgba(0,0,0,0.3); /* Overlay */
-    z-index: 0;
+    background-color: #1f2a33;
+    color: #fff;
   }
   header img {
-    max-width: 300px;
+    max-width: 350px; /* Portrait größer */
     width: 100%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     z-index: 1;
-    position: relative;
   }
   header .hero-text {
     max-width: 600px;
     z-index: 1;
-    position: relative;
   }
   header h1 {
     font-family: "Georgia", serif;
@@ -58,6 +47,11 @@
   header p {
     font-size: 1.3rem;
     margin-top: 0.5rem;
+  }
+  header .small {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    opacity: 0.8;
   }
 
   /* Navigation */
@@ -79,15 +73,41 @@
     text-decoration: underline;
   }
 
-  /* Sektionen */
-  section {
+  /* Sektionen mit Landschaftsrahmen */
+  .section-bg {
+    position: relative;
     max-width: 900px;
     margin: 4rem auto;
     padding: 2rem;
+    background-color: #f8f8f6;
   }
-  section:nth-of-type(even) {
-    background-color: #f4f4f2;
+  .section-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -120px;
+    width: 200px;
+    background: url('images/landschaft.jpg') center/cover no-repeat;
+    opacity: 0.15;
+    z-index: 0;
   }
+  .section-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -120px;
+    width: 200px;
+    background: url('images/landschaft.jpg') center/cover no-repeat;
+    opacity: 0.15;
+    z-index: 0;
+  }
+  .section-bg > * {
+    position: relative;
+    z-index: 1;
+  }
+
   h2 {
     font-family: "Georgia", serif;
     border-bottom: 1px solid #ccc;
@@ -165,25 +185,27 @@
     padding: 2rem;
     font-size: 0.9rem;
   }
-
   .small {
     font-size: 0.95rem;
     color: #555;
   }
 
   /* Responsive */
+  @media (max-width: 900px) {
+    .section-bg::before,
+    .section-bg::after {
+      display: none;
+    }
+  }
   @media (max-width: 800px) {
     header {
       flex-direction: column;
       text-align: center;
     }
-    header .hero-text {
-      max-width: 100%;
-    }
     header h1 {
       font-size: 2.2rem;
     }
-    header p {
+    header p, header .small {
       font-size: 1.1rem;
     }
     .medien-bilder img {
@@ -194,7 +216,7 @@
     header h1 {
       font-size: 1.8rem;
     }
-    header p {
+    header p, header .small {
       font-size: 1rem;
     }
     nav a {
@@ -226,13 +248,13 @@
   <a href="#kontakt">Kontakt</a>
 </nav>
 
-<section id="vita">
+<section id="vita" class="section-bg">
   <h2>Vita</h2>
   <p>Katharina Königer ist eine klassisch ausgebildete Sopranistin mit Schwerpunkt auf barockem und geistlichem Repertoire. Ihre Ausbildung absolvierte sie an der Berufsfachschule für Musik Sulzbach-Rosenberg mit Schwerpunkt Gesang und Chorleitung sowie an der Hochschule für Musik Nürnberg, wo sie Gesang/Vokalpädagogik und Elementare Musikpädagogik mit Fokus Barockgesang studierte.</p>
   <p>Als Sängerin ist sie regelmäßig als Solistin in Konzerten, Oratorien und kirchenmusikalischen Aufführungen zu hören. Ihre künstlerische Arbeit führt sie in verschiedene Kirchen und Konzertorte der Metropolregion Nürnberg und darüber hinaus.</p>
 </section>
 
-<section id="repertoire">
+<section id="repertoire" class="section-bg">
   <h2>Repertoire</h2>
   <h3>Oratorium & Geistliche Musik</h3>
   <ul>
@@ -248,7 +270,7 @@
   </ul>
 </section>
 
-<section id="konzerte">
+<section id="konzerte" class="section-bg">
   <h2>Konzerte & Engagements (Auswahl)</h2>
   <ul>
     <li><strong>Johannes-Passion – J. S. Bach</strong><br>Sopran-Solistin, St. Kilian Bad Windsheim, April 2025</li>
@@ -257,7 +279,7 @@
   </ul>
 </section>
 
-<section id="medien">
+<section id="medien" class="section-bg">
   <h2>Medien</h2>
   <iframe src="https://www.youtube.com/embed/VIDEOID" title="YouTube video player" allowfullscreen></iframe>
   <audio controls>
@@ -275,7 +297,7 @@
   <img class="lightbox-content" id="lightbox-img">
 </div>
 
-<section id="unterricht">
+<section id="unterricht" class="section-bg">
   <h2>Unterricht & Chorleitung</h2>
   <ul>
     <li><strong>MTV Hersbruck – Gesangsunterricht:</strong> <a href="https://mtv-hersbruck.de/lehrkraft/katharina-koeniger/" target="_blank">zur Seite</a></li>
@@ -284,7 +306,7 @@
   </ul>
 </section>
 
-<section id="kontakt">
+<section id="kontakt" class="section-bg">
   <h2>Kontakt</h2>
   <p><strong>Katharina Königer</strong><br>Sopran</p>
   <p>Region Nürnberger Land / Franken</p>
