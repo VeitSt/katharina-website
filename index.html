@@ -1,167 +1,171 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Katharina Königer – Sopran</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #f4f1ed;
-    color: #222;
-    line-height: 1.6;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katharina Königer – Sopran</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #f4f1ed;
+      color: #222;
+      line-height: 1.6;
+    }
 
-  /* Header - mutiger Look */
-  header {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 5%;
-    color: #fff;
-    background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url('images/landschaft.jpg') center/cover no-repeat;
-  }
-  header img {
-    max-width: 400px;
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-    margin-right: 2rem;
-    transform: rotate(-2deg);
-  }
-  header .hero-text {
-    max-width: 600px;
-  }
-  header h1 {
-    font-family: 'Georgia', serif;
-    font-size: 4rem;
-    margin: 0;
-    line-height: 1.1;
-    color: #ffe1b3;
-  }
-  header h2 {
-    font-size: 1.8rem;
-    margin-top: 0.5rem;
-    color: #f7f3f0;
-  }
-
-  /* Navigation */
-  nav {
-    position: sticky;
-    top: 0;
-    background: #222;
-    padding: 1rem;
-    text-align: center;
-    z-index: 100;
-  }
-  nav a {
-    color: #fff;
-    margin: 0 1rem;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s;
-  }
-  nav a:hover {
-    color: #ffd166;
-  }
-
-  /* Sektionen - diagonale Linien für Mut */
-  section {
-    position: relative;
-    padding: 4rem 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  section:nth-child(even) {
-    background: #fff5e6;
-    clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
-  }
-  section:nth-child(odd) {
-    background: #f4f1ed;
-    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 95%);
-  }
-
-  section h2 {
-    font-family: 'Georgia', serif;
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: #b03a2e;
-  }
-
-  .content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    align-items: center;
-  }
-  .content img {
-    max-width: 350px;
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transition: transform 0.3s;
-  }
-  .content img:hover {
-    transform: scale(1.05);
-  }
-  .text {
-    flex: 1;
-  }
-
-  ul {
-    padding-left: 1.5rem;
-  }
-
-  /* Medien */
-  .medien iframe,
-  .medien audio {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-  .medien-bilder {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  .medien-bilder img {
-    width: 48%;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-  .medien-bilder img:hover {
-    transform: scale(1.05);
-  }
-
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 2rem;
-    background: #222;
-    color: #fff;
-  }
-
-  /* Responsive */
-  @media(max-width:900px) {
+    /* Header - mutiger Look */
     header {
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      height: auto;
-      padding: 2rem;
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 5%;
+      color: #fff;
+      background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url('images/landschaft.jpg') center/cover no-repeat;
     }
-    .content {
-      flex-direction: column;
-    }
-    .medien-bilder img {
+    header img {
+      max-width: 400px;
       width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      margin-right: 2rem;
+      transform: rotate(-2deg);
     }
-  }
+    header .hero-text {
+      max-width: 600px;
+    }
+    header h1 {
+      font-family: 'Georgia', serif;
+      font-size: 4rem;
+      margin: 0;
+      line-height: 1.1;
+      color: #ffe1b3;
+    }
+    header h2 {
+      font-size: 1.8rem;
+      margin-top: 0.5rem;
+      color: #f7f3f0;
+    }
 
-</style>
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #222;
+      padding: 1rem;
+      text-align: center;
+      z-index: 100;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+    nav a:hover {
+      color: #ffd166;
+    }
+
+    /* Sektionen - diagonale Linien für Mut */
+    section {
+      position: relative;
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    section:nth-child(even) {
+      background: #fff5e6;
+      clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
+    }
+    section:nth-child(odd) {
+      background: #f4f1ed;
+      clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 95%);
+    }
+
+    section h2 {
+      font-family: 'Georgia', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #b03a2e;
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+    .content img {
+      max-width: 350px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+    .content img:hover {
+      transform: scale(1.05);
+    }
+    .text {
+      flex: 1;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    /* Medien */
+    .medien iframe,
+    .medien audio {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+    .medien-bilder {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    /* Angepasster Code für die Bilder unter der Sektion 'Medien' */
+    .medien-bilder img {
+      width: 48%;                  /* Setzt die Breite der Bilder auf 48% des Containers */
+      height: auto;                /* Die Höhe wird automatisch angepasst, um das Seitenverhältnis zu wahren */
+      border-radius: 10px;         /* Abgerundete Ecken für die Bilder */
+      cursor: pointer;            /* Zeigt den Cursor als Zeiger an, wenn man über das Bild fährt */
+      transition: transform 0.3s;  /* Sanfte Übergangsanimation für die Vergrößerung */
+      object-fit: cover;           /* Dehnt das Bild so, dass es den Container vollständig ausfüllt, ohne das Seitenverhältnis zu verzerren */
+    }
+
+    .medien-bilder img:hover {
+      transform: scale(1.05);      /* Vergrößert das Bild leicht, wenn man mit der Maus darüber fährt */
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #222;
+      color: #fff;
+    }
+
+    /* Responsive */
+    @media(max-width:900px) {
+      header {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        height: auto;
+        padding: 2rem;
+      }
+      .content {
+        flex-direction: column;
+      }
+      .medien-bilder img {
+        width: 100%;
+      }
+    }
+
+  </style>
 </head>
 <body>
 
@@ -185,11 +189,10 @@
 <section id="vita">
   <h2>Vita</h2>
   <div class="content">
-    
     <div class="text">
-  <p>Katharina Königer, geboren 1994 in Lauf an der Pegnitz, ist eine ausgebildete Sängerin mit einer Leidenschaft für Barockgesang. Ihre musikalische Ausbildung begann früh und führte sie über die Berufsfachschule für Musik in Sulzbach-Rosenberg zum Studium der Elementaren Musikpädagogik an der Hochschule für Musik Nürnberg, wo sie 2020 ihren Bachelorabschluss erlangte.</p>
-  <p>In ihrer Gesangsausbildung arbeitete Katharina mit namhaften Lehrern wie Hanna Eittinger und Birgit Ströbel-König und vertiefte ihre Kenntnisse im Barockgesang bei Deborah York. Ihre Ausbildung in funktionalem Stimmtraining nach Eugen Rabine sowie in Liedgestaltung und Barockmusik prägte ihren künstlerischen Stil.</p>
-  <p>Katharina tritt regelmäßig als Solistin auf, sowohl in Konzerten als auch bei Gottesdiensten und Liederabenden, und bringt ihre Leidenschaft für Musik in verschiedenen Chören und Ensembles zum Ausdruck. Ihre Vielseitigkeit und Erfahrung machen sie zu einer gefragten Sängerin und Musikpädagogin.</p>
+      <p>Katharina Königer, geboren 1994 in Lauf an der Pegnitz, ist eine ausgebildete Sängerin mit einer Leidenschaft für Barockgesang. Ihre musikalische Ausbildung begann früh und führte sie über die Berufsfachschule für Musik in Sulzbach-Rosenberg zum Studium der Elementaren Musikpädagogik an der Hochschule für Musik Nürnberg, wo sie 2020 ihren Bachelorabschluss erlangte.</p>
+      <p>In ihrer Gesangsausbildung arbeitete Katharina mit namhaften Lehrern wie Hanna Eittinger und Birgit Ströbel-König und vertiefte ihre Kenntnisse im Barockgesang bei Deborah York. Ihre Ausbildung in funktionalem Stimmtraining nach Eugen Rabine sowie in Liedgestaltung und Barockmusik prägte ihren künstlerischen Stil.</p>
+      <p>Katharina tritt regelmäßig als Solistin auf, sowohl in Konzerten als auch bei Gottesdiensten und Liederabenden, und bringt ihre Leidenschaft für Musik in verschiedenen Chören und Ensembles zum Ausdruck. Ihre Vielseitigkeit und Erfahrung machen sie zu einer gefragten Sängerin und Musikpädagogin.</p>
     </div>
     <img src="images/portrait2.jpg" alt="Vita Bild">
   </div>
@@ -222,45 +225,4 @@
     <ul>
       <li><strong>Johannes-Passion – J.S. Bach</strong> | St. Kilian Bad Windsheim, April 2025</li>
       <li><strong>Stiftungskonzert Artelshofen</strong> | Philippus- & Jakobuskirche, Oktober 2024</li>
-      <li>Konzertorte: Eschenbach, Pommelsbrunn, Neustadt a. Aisch</li>
-    </ul>
-    <img src="images/konzert1.jpg" alt="Konzert Bild">
-  </div>
-</section>
-
-<section id="medien">
-  <h2>Medien</h2>
-  <div class="medien">
-    <iframe src="https://www.youtube.com/embed/VIDEOID" allowfullscreen></iframe>
-    <audio controls>
-      <source src="audio/beispiel.mp3" type="audio/mpeg">
-    </audio>
-    <div class="medien-bilder">
-      <img src="images/konz1.png" alt="Konzertbild1">
-      <img src="images/konz2.png" alt="Konzertbild2">
-    </div>
-  </div>
-</section>
-
-<section id="unterricht">
-  <h2>Unterricht & Chorleitung</h2>
-  <ul>
-    <li><strong>MTV Hersbruck – Gesangsunterricht:</strong> <a href="https://mtv-hersbruck.de/lehrkraft/katharina-koeniger/" target="_blank">zur Seite</a></li>
-    <li><strong>Musikverein Velden:</strong> <a href="https://www.stadtkapelle-velden.de/de/zu-hause/artikel/?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=192&cHash=986c9f69ac59d0a97d9e366b456bfeb8" target="_blank">zur Seite</a></li>
-    <li><strong>Chorleitung Engelthal:</strong> <a href="https://engelthal-evangelisch.de/gruppen/" target="_blank">zur Seite</a></li>
-  </ul>
-</section>
-
-<section id="kontakt">
-  <h2>Kontakt</h2>
-     <p><strong>Katharina Königer</strong><br>Sopran</p>
-  <p>E-Mail: <a href="mailto:Katharina.Koeniger@posteo.de">Katharina.Koeniger@posteo.de</a></p>
-
-</section>
-
-<footer>
-  © Katharina Königer · Alle Rechte vorbehalten
-</footer>
-
-</body>
-</html>
+      <li>Konzertorte: Eschenbach, Pommelsbrunn, Neustadt a. Aisch</li
