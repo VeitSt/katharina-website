@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katharina Königer – Sopran</title>
+  <style>
+    body { margin:0; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; background-color:#f4f1ed; color:#222; line-height:1.6; }
+    header { position:relative; min-height:100vh; display:flex; align-items:center; justify-content:flex-start; padding-left:5%; color:#fff; background:linear-gradient(to right, rgba(0,0,0,.5), rgba(0,0,0,.2)), var(--hero-image) center/cover no-repeat; }
+    header img { max-width:400px; width:100%; border-radius:8px; box-shadow:0 8px 25px rgba(0,0,0,.4); margin-right:2rem; transform:rotate(-2deg); }
+    header .hero-text { max-width:600px; }
+    header h1 { font-family:Georgia, serif; font-size:4rem; margin:0; line-height:1.1; color:#ffe1b3; }
+    header h2 { font-size:1.8rem; margin-top:.5rem; color:#f7f3f0; }
+    nav { position:sticky; top:0; background:#222; padding:1rem; text-align:center; z-index:100; }
+    nav a { color:#fff; margin:0 1rem; text-decoration:none; font-weight:bold; transition:all .3s; }
+    nav a:hover { color:#ffd166; }
+    section { position:relative; padding:4rem 2rem; max-width:1000px; margin:0 auto; }
+    section:nth-child(even) { background:#fff5e6; clip-path:polygon(0 5%,100% 0%,100% 95%,0% 100%); }
+    section:nth-child(odd) { background:#f4f1ed; clip-path:polygon(0 0,100% 5%,100% 100%,0% 95%); }
+    section h2 { font-family:Georgia, serif; font-size:2.5rem; margin-bottom:1.5rem; color:#b03a2e; }
+    .content { display:flex; flex-wrap:wrap; gap:2rem; align-items:center; }
+    .content img { max-width:350px; width:100%; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,.3); transition:transform .3s; }
+    .content img:hover, .medien-bilder img:hover, .konzert-card img:hover { transform:scale(1.03); }
+    .text { flex:1; }
+    ul { padding-left:1.5rem; }
+    .konzert-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.5rem; width:100%; }
+    .konzert-card { background:rgba(255,255,255,.72); border-radius:12px; padding:1rem; box-shadow:0 3px 12px rgba(0,0,0,.12); }
+    .konzert-card img { width:100%; max-height:220px; object-fit:cover; border-radius:10px; margin-top:.8rem; transition:transform .3s; }
+    .konzert-date { font-weight:bold; color:#b03a2e; }
+    .medien iframe, .medien audio { width:100%; margin-bottom:2rem; }
+    .medien iframe { min-height:360px; border:0; border-radius:10px; }
+    .medien-bilder { display:flex; flex-wrap:wrap; gap:1rem; }
+    .medien-bilder img { width:48%; height:auto; border-radius:10px; cursor:pointer; transition:transform .3s; object-fit:cover; }
+    footer { text-align:center; padding:2rem; background:#222; color:#fff; }
+    .empty { opacity:.75; font-style:italic; }
+    @media(max-width:900px) { header { flex-direction:column; justify-content:center; text-align:center; min-height:auto; padding:2rem; } header img { margin-right:0; margin-bottom:1.5rem; } .content { flex-direction:column; } .medien-bilder img { width:100%; } }
+  </style>
+</head>
+<body>
+<header id="hero">
+  <img id="portrait" src="images/portrait.jpg" alt="Katharina Königer">
+  <div class="hero-text">
+    <h1 id="site-name">Katharina<br>Königer</h1>
+    <h2 id="site-subtitle">Sopran · Klassischer Gesang · Konzert & Oratorium</h2>
+  </div>
+</header>
+<nav>
+  <a href="#vita">Vita</a><a href="#repertoire">Repertoire</a><a href="#konzerte">Konzerte</a><a href="#medien">Medien</a><a href="#unterricht">Unterricht</a><a href="#kontakt">Kontakt</a>
+</nav>
+<section id="vita"><h2>Vita</h2><div class="content"><div class="text" id="vita-text"></div><img id="vita-image" src="images/portrait2.jpg" alt="Vita Bild"></div></section>
+<section id="repertoire"><h2>Repertoire</h2><div class="content"><div class="text" id="repertoire-list"></div><img id="repertoire-image" src="images/portrait_alt.jpg" alt="Repertoire Bild"></div></section>
+<section id="konzerte"><h2>Konzerte & Engagements</h2><div class="content"><div id="konzertliste" class="konzert-grid"></div></div></section>
+<section id="medien"><h2>Medien</h2><div class="medien"><div id="youtube-list"></div><div id="audio-list"></div><div id="gallery" class="medien-bilder"></div></div></section>
+<section id="unterricht"><h2>Unterricht & Chorleitung</h2><ul id="unterricht-list"></ul></section>
+<section id="kontakt"><h2>Kontakt</h2><p><strong id="contact-name">Katharina Königer</strong><br>Sopran</p><p>E-Mail: <a id="contact-email" href="mailto:Katharina.Koeniger@posteo.de">Katharina.Koeniger@posteo.de</a></p></section>
+<footer>© <span id="footer-name">Katharina Königer</span> · Alle Rechte vorbehalten</footer>
+<script>
+const esc = s => String(s ?? '').replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const dateDE = iso => { if(!iso) return ''; const d = new Date(iso + 'T12:00:00'); return Number.isNaN(d.getTime()) ? iso : d.toLocaleDateString('de-DE', {year:'numeric', month:'long', day:'numeric'}); };
+function youtubeEmbed(url){ if(!url) return ''; if(url.includes('/embed/')) return url; const m = url.match(/(?:youtu\.be\/|v=)([A-Za-z0-9_-]+)/); return m ? 'https://www.youtube.com/embed/' + m[1] : url; }
+fetch('data/site-data.json?ts=' + Date.now()).then(r => r.json()).then(data => {
+  const site = data.site || {};
+  document.title = `${site.name || 'Katharina Königer'} – Sopran`;
+  document.documentElement.style.setProperty('--hero-image', `url('${site.hero_image || 'images/landschaft.jpg'}')`);
+  document.getElementById('portrait').src = site.portrait || 'images/portrait.jpg';
+  document.getElementById('site-name').innerHTML = esc(site.name || 'Katharina Königer').replace(' ', '<br>');
+  document.getElementById('site-subtitle').textContent = site.subtitle || '';
+  document.getElementById('vita-image').src = site.vita_image || 'images/portrait2.jpg';
+  document.getElementById('repertoire-image').src = site.repertoire_image || 'images/portrait_alt.jpg';
+  document.getElementById('contact-name').textContent = site.name || 'Katharina Königer';
+  document.getElementById('footer-name').textContent = site.name || 'Katharina Königer';
+  if(site.email){ const a=document.getElementById('contact-email'); a.textContent=site.email; a.href='mailto:'+site.email; }
+  document.getElementById('vita-text').innerHTML = (data.vita || []).map(p => `<p>${esc(p)}</p>`).join('');
+  document.getElementById('repertoire-list').innerHTML = (data.repertoire || []).map(g => `<h3>${esc(g.bereich)}</h3><ul>${(g.werke||[]).map(w => `<li>${esc(w)}</li>`).join('')}</ul>`).join('');
+  const concerts = [...(data.konzerte || [])].sort((a,b)=>(a.datum||'').localeCompare(b.datum||''));
+  document.getElementById('konzertliste').innerHTML = concerts.length ? concerts.map(k => `<article class="konzert-card"><div class="konzert-date">${esc(dateDE(k.datum))}</div><h3>${esc(k.titel)}</h3><p><strong>${esc(k.ort)}</strong></p>${k.beschreibung ? `<p>${esc(k.beschreibung)}</p>` : ''}${k.link ? `<p><a href="${esc(k.link)}" target="_blank" rel="noopener">Weitere Informationen</a></p>` : ''}${k.bild ? `<img src="${esc(k.bild)}" alt="${esc(k.titel)}">` : ''}</article>`).join('') : '<p class="empty">Aktuell sind keine Konzerttermine eingetragen.</p>';
+  const med = data.medien || {};
+  document.getElementById('youtube-list').innerHTML = (med.youtube||[]).map(v => `<iframe src="${esc(youtubeEmbed(v.url))}" title="${esc(v.titel||'YouTube Video')}" allowfullscreen></iframe>`).join('');
+  document.getElementById('audio-list').innerHTML = (med.audio||[]).map(a => `<p><strong>${esc(a.titel)}</strong></p><audio controls><source src="${esc(a.datei)}" type="audio/mpeg"></audio>`).join('');
+  document.getElementById('gallery').innerHTML = (med.bilder||[]).map(i => `<img src="${esc(i.datei)}" alt="${esc(i.alt||i.titel||'Bild')}">`).join('');
+  document.getElementById('unterricht-list').innerHTML = (data.unterricht || []).map(u => `<li><strong>${esc(u.titel)}:</strong> <a href="${esc(u.url)}" target="_blank" rel="noopener">zur Seite</a></li>`).join('');
+}).catch(err => console.error('Daten konnten nicht geladen werden:', err));
+</script>
+</body>
+</html>
