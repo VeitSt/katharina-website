@@ -3,7 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Katharina Königer – Sopran</title>
+<title>Katharina Königer | Sopranistin – Barock, Oratorium &amp; Konzert</title>
+<meta name="description" content="Katharina Königer ist Sopranistin mit Schwerpunkt Barockmusik, Oratorium und geistlichem Repertoire. Vita, Repertoire und aktuelle Konzerte.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://katharina-koeniger.de/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Katharina Königer | Sopranistin">
+<meta property="og:description" content="Sopranistin mit Schwerpunkt Barockmusik, Oratorium und geistlichem Repertoire. Vita, Repertoire und aktuelle Konzerte.">
+<meta property="og:url" content="https://katharina-koeniger.de/">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Katharina Königer",
+  "url": "https://katharina-koeniger.de/",
+  "jobTitle": "Sopranistin",
+  "description": "Sopranistin mit Schwerpunkt Barockmusik, Oratorium und geistlichem Repertoire.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Hartenstein",
+    "postalCode": "91235",
+    "addressCountry": "DE"
+  }
+}
+</script>
 <style>
 :root{--ink:#211f1d;--paper:#f5f1eb;--cream:#ebe2d7;--terracotta:#9b4b3f;--line:#cfc3b6;--white:#fff}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -35,7 +59,16 @@ h3{font-family:Georgia,serif;font-weight:400}.lead{font-family:Georgia,serif;fon
 .konzert-info h4{font-family:Georgia,serif;font-size:1.55rem;line-height:1.18;margin:6px 0 9px}
 .konzert-meta{font-size:.86rem;text-transform:uppercase;letter-spacing:.07em;color:#70665f}
 .konzert-beschreibung{margin:12px 0 0;color:#554d47;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.hinweis{color:#756d67}
-.media{background:var(--cream)}.gallery{display:grid;grid-template-columns:1.35fr .8fr;grid-template-rows:260px 260px;gap:16px}.gallery img{width:100%;height:100%;object-fit:cover}.gallery img:first-child{grid-row:1/3}
+.media{background:var(--cream)}
+.gallery{columns:3 250px;column-gap:16px}
+.gallery-item{display:block;width:100%;margin:0 0 16px;border:0;padding:0;background:none;cursor:zoom-in;break-inside:avoid;overflow:hidden}
+.gallery-item img{display:block;width:100%;height:auto;transition:transform .35s ease}
+.gallery-item:hover img{transform:scale(1.025)}
+.gallery-empty{color:#70665f}
+.media-lightbox{position:fixed;inset:0;background:rgba(20,18,16,.9);display:none;align-items:center;justify-content:center;padding:28px;z-index:1100}
+.media-lightbox.offen{display:flex}
+.media-lightbox img{max-width:94vw;max-height:90vh;width:auto;height:auto;object-fit:contain}
+.media-lightbox button{position:fixed;right:20px;top:20px;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font-size:1.7rem;cursor:pointer}
 .teaching-grid{display:grid;grid-template-columns:1fr 1fr;gap:7vw}.teaching-links{border-top:1px solid var(--line)}.teaching-link{display:block;text-decoration:none;padding:22px 0;border-bottom:1px solid var(--line);font-family:Georgia,serif;font-size:1.45rem}.teaching-link span{float:right;font-family:Arial,sans-serif;font-size:1rem}
 .contact{background:var(--terracotta);color:white}.contact h2{max-width:900px}.contact-mail{display:inline-block;margin-top:45px;font-family:Georgia,serif;font-size:clamp(1.25rem,3vw,2.6rem);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.55)}
 footer{background:#171615;color:#aaa;padding:26px;text-align:center;font-size:.85rem}footer a{color:#ccc;text-decoration:none}footer a:hover{text-decoration:underline}
@@ -63,16 +96,16 @@ footer{background:#171615;color:#aaa;padding:26px;text-align:center;font-size:.8
 .hero{grid-template-columns:1fr;min-height:auto;padding-top:50px;text-align:center}.hero-photo{justify-self:center;width:min(320px,78vw)}.hero-copy{padding-bottom:70px}.hero h1{font-size:clamp(3.7rem,18vw,6.2rem)}
 .wrap{width:min(100% - 32px,1160px)}section{padding:75px 0}.section-head{grid-template-columns:50px 1fr}
 .vita-grid,.teaching-grid{grid-template-columns:1fr}.vita-grid img{max-height:560px}.rep-grid,.konzert-grid{grid-template-columns:1fr}
-.rep-block{padding:28px}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:280px 180px}.gallery img:first-child{grid-column:1/3;grid-row:auto}
+.rep-block{padding:28px}.gallery{columns:2 180px}
 .konzert-card img{width:100%;height:240px}
 }
-</style>
+@media(max-width:560px){.gallery{columns:1}.media-lightbox{padding:12px}}</style>
 </head>
 <body>
 <header class="hero">
   <img class="hero-photo" src="images/portrait.jpg" alt="Katharina Königer">
   <div class="hero-copy">
-    <div class="eyebrow">Sopran · Nürnberg</div>
+    <div class="eyebrow">Sopranistin · Metropolregion Nürnberg</div>
     <h1>Katharina<br>Königer</h1>
     <div class="subtitle">Barock · Oratorium · Lied</div>
   </div>
@@ -125,11 +158,7 @@ footer{background:#171615;color:#aaa;padding:26px;text-align:center;font-size:.8
 
 <section class="media" id="medien"><div class="wrap">
   <div class="section-head"><div class="section-no">04</div><h2>Medien</h2></div>
-  <div class="gallery">
-    <img src="images/konz1.png" alt="Katharina Königer im Konzert">
-    <img src="images/konz2.png" alt="Konzertaufnahme">
-    <img src="images/portrait_alt.jpg" alt="Katharina Königer">
-  </div>
+  <div id="medien-galerie" class="gallery"><p class="gallery-empty">Bilder werden geladen …</p></div>
 </div></section>
 
 <section id="unterricht"><div class="wrap">
@@ -213,5 +242,58 @@ document.addEventListener('DOMContentLoaded', async function(){
   }
 });
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', async function(){
+  const galerie=document.getElementById('medien-galerie');
+  if(!galerie) return;
+
+  const lightbox=document.createElement('div');
+  lightbox.className='media-lightbox';
+  lightbox.innerHTML='<button type="button" aria-label="Schließen">×</button><img alt="">';
+  document.body.appendChild(lightbox);
+
+  const gross=lightbox.querySelector('img');
+  const schliessen=()=>lightbox.classList.remove('offen');
+  lightbox.querySelector('button').addEventListener('click',schliessen);
+  lightbox.addEventListener('click',e=>{if(e.target===lightbox)schliessen()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')schliessen()});
+
+  try{
+    const response=await fetch('medien.json',{cache:'no-store'});
+    if(!response.ok) throw new Error('HTTP '+response.status);
+    const bilder=await response.json();
+    galerie.innerHTML='';
+
+    if(!Array.isArray(bilder)||!bilder.length){
+      galerie.innerHTML='<p class="gallery-empty">Weitere Bilder folgen.</p>';
+      return;
+    }
+
+    bilder.forEach((eintrag,i)=>{
+      const obj=typeof eintrag==='string'?{bild:eintrag}:eintrag;
+      if(!obj||!obj.bild) return;
+      const button=document.createElement('button');
+      button.type='button';
+      button.className='gallery-item';
+      const img=document.createElement('img');
+      img.src=obj.bild;
+      img.alt=obj.alt||('Katharina Königer – Aufnahme '+(i+1));
+      img.loading='lazy';
+      button.appendChild(img);
+      button.addEventListener('click',()=>{
+        gross.src=obj.bild;
+        gross.alt=img.alt;
+        lightbox.classList.add('offen');
+      });
+      galerie.appendChild(button);
+    });
+  }catch(err){
+    console.error('medien.json konnte nicht geladen werden:',err);
+    galerie.innerHTML='<p class="gallery-empty">Die Bildergalerie konnte nicht geladen werden.</p>';
+  }
+});
+</script>
+
 </body>
 </html>
