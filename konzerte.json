@@ -1,31 +1,116 @@
 [
   {
-    "datum": "Oktober 2026",
-    "sortierdatum": "2026-10-18",
-    "titel": "Konzert für Kinder: Musik Zeitmaschine - Klänge von der Urzeit bis zur Zukunft",
-    "ort": "Musikhalle der Stadtkapelle Velden (mfr)",
-    "bild": "images/konzert_fur_kinder_musik_zeitmaschine_klange_von_der_urzeit_bis_zur_zu.jpg"
+    "datum": "März 2011",
+    "sortierdatum": "2011-03-13",
+    "titel": "Oh, wie schön ist Panama – Kinder- und Familienoper",
+    "ort": "Dehnberger Hof Theater, Dehnberg",
+    "beschreibung": "Mitwirkung als Jugendliche in der Uraufführungsproduktion der Kinder- und Familienoper „Oh, wie schön ist Panama“ nach Janosch. Musik von Hans Kraus-Hübner, Inszenierung Andrea Mellis. Premiere am 13. März 2011 am Dehnberger Hof Theater."
   },
   {
-    "datum": "April 2025",
-    "titel": "Johannes-Passion – J.S. Bach",
-    "ort": "St. Kilian Bad Windsheim",
+    "datum": "2015/2016",
+    "sortierdatum": "2016-01-01",
+    "titel": "Kammerkantate von Christoph Pez",
+    "ort": "St.-Anna-Kirche, Sulzbach-Rosenberg",
+    "beschreibung": "Konzert der Kammermusikklasse der Berufsfachschule für Musik zum Annabergfest. Katharina Königer gestaltete als Sopranistin gemeinsam mit dem Flötisten Isthur Jambal eine Kammerkantate des Münchener Komponisten Christoph Pez."
+  },
+  {
+    "datum": "April 2018",
+    "sortierdatum": "2018-04-01",
+    "titel": "Musikabend in der Sängerhalle",
+    "ort": "Sängerhalle Hartmannshof",
+    "beschreibung": "Solistischer Auftritt mit Operettenrepertoire sowie Duette mit Altistin Birgit Rösch. Katharina Königer sang unter anderem „Kaiser meiner Seele“ und das „Vilja-Lied“."
+  },
+  {
+    "datum": "2019",
+    "sortierdatum": "2019-09-01",
+    "titel": "Jubiläumskonzert der Kirchenstiftung St. Wolfgang",
+    "ort": "St. Wolfgangskirche, Röthenbach bei St. Wolfgang",
+    "beschreibung": "Barockkonzert zum zehnjährigen Jubiläum der Kirchenstiftung. Katharina Königer als Sopran-Solistin mit Anna Katharina von Segnitz, Violine, Ute Königer, Truhenorgel, und Klaus Martius, Laute. Unter anderem mit „Se l’aura spira“ von Girolamo Frescobaldi und einer dreisätzigen Kantate von Francesco Mancini."
+  },
+  {
+    "datum": "2019",
+    "sortierdatum": "2019-06-01",
+    "titel": "Internationale Orgelwoche Nürnberg – ION Nacht",
+    "ort": "Nürnberg",
+    "beschreibung": "Vokalquartett der Hochschule für Musik Nürnberg im Rahmen der ION Nacht. Katharina Königer übernahm die musikalische Leitung des Vokalquartetts."
+  },
+  {
+    "datum": "1. November 2020",
+    "sortierdatum": "2020-11-01",
+    "titel": "Konzert zu Allerheiligen – Barocke Solokantaten",
+    "ort": "St. Nikolauskirche, Kornburg",
+    "beschreibung": "Barocke Solokantaten und Instrumentalmusik für Sopran und Violine mit Werken von Benedikt Biechteler, Heinrich Schütz, Johann Philipp Krieger, Erasmus Kindermann und Heinrich Schmelzer. Katharina Königer, Sopran; Anna Katharina von Segnitz, Violine; Ute Königer, Orgel; Klaus Martius, Laute."
+  },
+  {
+    "datum": "2. Mai 2021",
+    "sortierdatum": "2021-05-02",
+    "titel": "Kantatensonntag",
+    "ort": "Stadtkirche Neustadt an der Aisch",
+    "beschreibung": "Gottesdienste zum Kantatensonntag um 9.30 und 10.30 Uhr mit der Schola Variabilum und Katharina Königer als Solo-Sopran. Das aufgeführte Werk ist noch zu ergänzen."
+  },
+  {
+    "datum": "28. April 2024",
+    "sortierdatum": "2024-04-28",
+    "titel": "J. S. Bach – Nun danket alle Gott, BWV 192",
+    "ort": "Stadtkirche Hersbruck",
+    "beschreibung": "Aufführung von Johann Sebastian Bachs Kantate „Nun danket alle Gott“ BWV 192 mit Projektchor und Kammerorchester. Katharina Königer, Sopran, und Tobias Link, Bass, gestalteten das Duett der Kantate."
+  },
+  {
+    "datum": "6. Oktober 2024",
+    "sortierdatum": "2024-10-06",
+    "titel": "Stiftungsfestkonzert Artelshofen",
+    "ort": "Philippus- & Jakobuskirche, Artelshofen",
+    "beschreibung": "Stiftungsfestkonzert mit dem Chor Esbecial sowie Katharina und Ute Königer und Einhard Lauffer-Königer."
+  },
+  {
+    "datum": "22. Dezember 2024",
+    "sortierdatum": "2024-12-22",
+    "titel": "Weihnachtskonzert – Händel, Hammerschmidt & Mendelssohn",
+    "ort": "Stadtkirche Neustadt an der Aisch",
+    "beschreibung": "Weihnachtskonzert mit Evangelischer Kantorei und Kammerorchester unter Leitung von Christoph Beyrer. Werke von Andreas Hammerschmidt, Georg Friedrich Händel und Felix Mendelssohn Bartholdy. Katharina Königer, Sopran; Thilo Stute, Tenor; Patryk Rybarczyk, Bass."
+  },
+  {
+    "datum": "15. März 2025",
+    "sortierdatum": "2025-03-15",
+    "titel": "Konzert mit Kantorei & Projektchor Unicum",
+    "ort": "Stadtkirche Neustadt an der Aisch",
+    "beschreibung": "Konzert mit Katharina Königer, Sopran, Dorothea Zimmermann, Alt, Juan Carlos Falcon, Tenor, Holger Ohlmann, Bass, der Evangelischen Kantorei Neustadt, dem Projektchor Unicum und Orchester unter Leitung von Christoph Beyrer."
+  },
+  {
+    "datum": "6. April 2025",
+    "sortierdatum": "2025-04-06",
+    "titel": "Johannes-Passion – J. S. Bach",
+    "ort": "St. Kilian, Bad Windsheim",
+    "beschreibung": "Johann Sebastian Bachs Johannes-Passion mit Katharina Königer als Sopran-Solistin.",
     "bild": "images/konzert1.jpg"
   },
   {
     "datum": "Oktober 2025",
+    "sortierdatum": "2025-10-01",
     "titel": "Stiftungskonzert Artelshofen 2",
-    "ort": "Philippus- & Jakobuskirche",
+    "ort": "Philippus- & Jakobuskirche, Artelshofen",
     "bild": "images/stiftungskonzert_artelshofen_2_oktober_2025.jpg"
   },
   {
-    "datum": "Oktober 2026",
-    "titel": "Stiftungskonzert Artelshofen 3",
-    "ort": "Philippus- & Jakobuskirche",
-    "bild": "images/konzert1.jpg"
+    "datum": "26. Oktober 2025",
+    "sortierdatum": "2025-10-26",
+    "titel": "Kammermusikkonzert – Musik des Barock",
+    "ort": "Albanuskirche Reichenschwand",
+    "beschreibung": "Kammermusikkonzert mit Werken von Johann Sebastian Bach, Georg Philipp Telemann, Heinrich Schütz und weiteren Komponisten der Barockzeit. Mit dem Blockflötentrio Anklang, Katharina Königer, Sopran, und Anne Barkowski, Cello und Sopran."
   },
   {
-    "titel": "Konzertorte",
-    "ort": "Eschenbach, Pommelsbrunn, Neustadt a. Aisch"
+    "datum": "18. Oktober 2026",
+    "sortierdatum": "2026-10-18",
+    "titel": "Konzert für Kinder: Musik Zeitmaschine – Klänge von der Urzeit bis zur Zukunft",
+    "ort": "Musikhalle der Stadtkapelle Velden (Mfr.)",
+    "beschreibung": "Kinderkonzert und musikalische Zeitreise mit Katharina Königer sowie Marie Sophie Wunder und Tabea Wink.",
+    "bild": "images/konzert_fur_kinder_musik_zeitmaschine_klange_von_der_urzeit_bis_zur_zu.jpg"
+  },
+  {
+    "datum": "20. Dezember 2026",
+    "sortierdatum": "2026-12-20",
+    "titel": "J. S. Bach – Weihnachtsoratorium I–III",
+    "ort": "St. Kilian, Bad Windsheim",
+    "beschreibung": "Johann Sebastian Bachs Weihnachtsoratorium, Kantaten I–III, mit der Kantorei Bad Windsheim und dem erweiterten Ansbacher Kammerorchester. Katharina Königer, Sopran; Katharina Flierl, Alt; Manuel Ried, Tenor; Manuel Krauß, Bass. Gesamtleitung: Anne Barkowski."
   }
 ]
