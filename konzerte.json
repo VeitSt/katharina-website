@@ -1,0 +1,31 @@
+[
+  {
+    "datum": "Oktober 2026",
+    "sortierdatum": "2026-10-18",
+    "titel": "Konzert für Kinder: Musik Zeitmaschine - Klänge von der Urzeit bis zur Zukunft",
+    "ort": "Musikhalle der Stadtkapelle Velden (mfr)",
+    "bild": "images/konzert_fur_kinder_musik_zeitmaschine_klange_von_der_urzeit_bis_zur_zu.jpg"
+  },
+  {
+    "datum": "April 2025",
+    "titel": "Johannes-Passion – J.S. Bach",
+    "ort": "St. Kilian Bad Windsheim",
+    "bild": "images/konzert1.jpg"
+  },
+  {
+    "datum": "Oktober 2025",
+    "titel": "Stiftungskonzert Artelshofen 2",
+    "ort": "Philippus- & Jakobuskirche",
+    "bild": "images/stiftungskonzert_artelshofen_2_oktober_2025.jpg"
+  },
+  {
+    "datum": "Oktober 2026",
+    "titel": "Stiftungskonzert Artelshofen 3",
+    "ort": "Philippus- & Jakobuskirche",
+    "bild": "images/konzert1.jpg"
+  },
+  {
+    "titel": "Konzertorte",
+    "ort": "Eschenbach, Pommelsbrunn, Neustadt a. Aisch"
+  }
+]

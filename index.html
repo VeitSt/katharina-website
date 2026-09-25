@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katharina Königer – Sopran</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #f4f1ed;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    /* Header - mutiger Look */
+    header {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 5%;
+      color: #fff;
+      background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url('images/landschaft.jpg') center/cover no-repeat;
+    }
+    header img {
+      max-width: 400px;
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      margin-right: 2rem;
+      transform: rotate(-2deg);
+    }
+    header .hero-text {
+      max-width: 600px;
+    }
+    header h1 {
+      font-family: 'Georgia', serif;
+      font-size: 4rem;
+      margin: 0;
+      line-height: 1.1;
+      color: #ffe1b3;
+    }
+    header h2 {
+      font-size: 1.8rem;
+      margin-top: 0.5rem;
+      color: #f7f3f0;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #222;
+      padding: 1rem;
+      text-align: center;
+      z-index: 100;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+    nav a:hover {
+      color: #ffd166;
+    }
+
+    /* Sektionen - diagonale Linien für Mut */
+    section {
+      position: relative;
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    section:nth-child(even) {
+      background: #fff5e6;
+      clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
+    }
+    section:nth-child(odd) {
+      background: #f4f1ed;
+      clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 95%);
+    }
+
+    section h2 {
+      font-family: 'Georgia', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #b03a2e;
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+    .content img {
+      max-width: 350px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+    .content img:hover {
+      transform: scale(1.05);
+    }
+    .text {
+      flex: 1;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    /* Medien */
+    .medien iframe,
+    .medien audio {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+    .medien-bilder {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    /* Angepasster Code für die Bilder unter der Sektion 'Medien' */
+    .medien-bilder img {
+      width: 48%;                  /* Setzt die Breite der Bilder auf 48% des Containers */
+      height: auto;                /* Die Höhe wird automatisch angepasst, um das Seitenverhältnis zu wahren */
+      border-radius: 10px;         /* Abgerundete Ecken für die Bilder */
+      cursor: pointer;            /* Zeigt den Cursor als Zeiger an, wenn man über das Bild fährt */
+      transition: transform 0.3s;  /* Sanfte Übergangsanimation für die Vergrößerung */
+      object-fit: cover;           /* Dehnt das Bild so, dass es den Container vollständig ausfüllt, ohne das Seitenverhältnis zu verzerren */
+    }
+
+    .medien-bilder img:hover {
+      transform: scale(1.05);      /* Vergrößert das Bild leicht, wenn man mit der Maus darüber fährt */
+    }
+
+
+
+    /* Konzerte aus konzerte.json */
+    .konzert-bereich {
+      width: 100%;
+    }
+    .konzert-gruppe {
+      margin-bottom: 2.5rem;
+    }
+    .konzert-gruppe h3 {
+      font-family: 'Georgia', serif;
+      font-size: 1.6rem;
+      margin: 0 0 1rem;
+      color: #222;
+    }
+    .konzert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+    }
+    .konzert-karte {
+      background: rgba(255,255,255,0.82);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.25s;
+      border: 1px solid rgba(176, 58, 46, 0.15);
+    }
+    .konzert-karte:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+    }
+    .konzert-karte img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+    .konzert-inhalt {
+      padding: 1rem;
+    }
+    .konzert-datum {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #b03a2e;
+      margin-bottom: 0.4rem;
+    }
+    .konzert-titel {
+      margin: 0 0 0.4rem;
+      font-size: 1.15rem;
+      line-height: 1.25;
+      color: #222;
+    }
+    .konzert-ort {
+      margin: 0;
+      color: #555;
+    }
+    .konzert-beschreibung {
+      margin: 0.6rem 0 0;
+      color: #444;
+    }
+    .konzert-leer {
+      color: #666;
+      font-style: italic;
+      margin: 0 0 1rem;
+    }
+    .konzertorte-liste {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: rgba(255,255,255,0.7);
+      border-radius: 12px;
+    }
+    .hinweis {
+      color: #666;
+      font-style: italic;
+    }
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      z-index: 1000;
+    }
+    .modal.offen {
+      display: flex;
+    }
+    .modal-inhalt {
+      background: #fff5e6;
+      color: #222;
+      max-width: 620px;
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+      position: relative;
+    }
+    .modal-inhalt img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+    .modal-text {
+      padding: 1.5rem;
+    }
+    .modal-schliessen {
+      position: absolute;
+      top: 0.7rem;
+      right: 0.7rem;
+      background: rgba(0,0,0,0.65);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 2.4rem;
+      height: 2.4rem;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #222;
+      color: #fff;
+    }
+
+    /* Responsive */
+    @media(max-width:900px) {
+      header {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        height: auto;
+        padding: 2rem;
+      }
+      .content {
+        flex-direction: column;
+      }
+      .medien-bilder img {
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="images/portrait.jpg" alt="Katharina Königer">
+  <div class="hero-text">
+    <h1>Katharina<br>Königer</h1>
+    <h2>Sopran · Klassischer Gesang · Konzert&Oratorium</h2>
+  </div>
+</header>
+
+<nav>
+  <a href="#vita">Vita</a>
+  <a href="#repertoire">Repertoire</a>
+  <a href="#konzerte">Konzerte</a>
+  <a href="#medien">Medien</a>
+  <a href="#unterricht">Unterricht</a>
+  <a href="#kontakt">Kontakt</a>
+</nav>
+
+<section id="vita">
+  <h2>Vita</h2>
+  <div class="content">
+    <div class="text">
+      <p>Katharina Königer, geboren 1994 in Lauf an der Pegnitz, ist eine ausgebildete Sängerin mit einer Leidenschaft für Barockgesang. Ihre musikalische Ausbildung begann früh und führte sie über die Berufsfachschule für Musik in Sulzbach-Rosenberg zum Studium der Elementaren Musikpädagogik an der Hochschule für Musik Nürnberg, wo sie 2020 ihren Bachelorabschluss erlangte.</p>
+      <p>In ihrer Gesangsausbildung arbeitete Katharina mit namhaften Lehrern wie Hanna Eittinger und Birgit Ströbel-König und vertiefte ihre Kenntnisse im Barockgesang bei Deborah York. Ihre Ausbildung in funktionalem Stimmtraining nach Eugen Rabine sowie in Liedgestaltung und Barockmusik prägte ihren künstlerischen Stil.</p>
+      <p>Katharina tritt regelmäßig als Solistin auf, sowohl in Konzerten als auch bei Gottesdiensten und Liederabenden, und bringt ihre Leidenschaft für Musik in verschiedenen Chören und Ensembles zum Ausdruck. Ihre Vielseitigkeit und Erfahrung machen sie zu einer gefragten Sängerin und Musikpädagogin.</p>
+    </div>
+    <img src="images/portrait2.jpg" alt="Vita Bild">
+  </div>
+</section>
+
+<section id="repertoire">
+  <h2>Repertoire</h2>
+  <div class="content">
+    <div class="text">
+      <h3>Oratorium & Geistliche Musik</h3>
+      <ul>
+        <li>J. S. Bach – Johannes-Passion</li>
+        <li>Kantaten & geistliche Werke</li>
+        <li>Barocke Konzertliteratur</li>
+      </ul>
+      <h3>Lied & Konzert</h3>
+      <ul>
+        <li>Kunstlied verschiedener Epochen</li>
+        <li>Geistliche Lieder</li>
+        <li>Konzertprogramme</li>
+      </ul>
+    </div>
+    <img src="images/portrait_alt.jpg" alt="Repertoire Bild">
+  </div>
+</section>
+
+<section id="konzerte">
+  <h2>Konzerte & Engagements</h2>
+  <div id="konzert-bereich" class="konzert-bereich">
+    <p class="hinweis">Konzerte werden geladen …</p>
+  </div>
+</section>
+
+<section id="medien">
+  <h2>Medien</h2>
+  <div class="medien">
+    <iframe src="https://www.youtube.com/embed/VIDEOID" allowfullscreen></iframe>
+    <audio controls>
+      <source src="audio/beispiel.mp3" type="audio/mpeg">
+    </audio>
+    <div class="medien-bilder">
+      <img src="images/konz1.png" alt="Konzertbild1">
+      <img src="images/konz2.png" alt="Konzertbild2">
+    </div>
+  </div>
+</section>
+
+<section id="unterricht">
+  <h2>Unterricht & Chorleitung</h2>
+  <ul>
+    <li><strong>MTV Hersbruck – Gesangsunterricht:</strong> <a href="https://mtv-hersbruck.de/lehrkraft/katharina-koeniger/" target="_blank">zur Seite</a></li>
+    <li><strong>Musikverein Velden:</strong> <a href="https://www.stadtkapelle-velden.de/de/zu-hause/artikel/?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=192&cHash=986c9f69ac59d0a97d9e366b456bfeb8" target="_blank">zur Seite</a></li>
+    <li><strong>Chorleitung Engelthal:</strong> <a href="https://engelthal-evangelisch.de/gruppen/" target="_blank">zur Seite</a></li>
+  </ul>
+</section>
+
+<section id="kontakt">
+  <h2>Kontakt</h2>
+  <p><strong>Katharina Königer</strong><br>Sopran</p>
+  <p>E-Mail: <a href="mailto:Katharina.Koeniger@posteo.de">Katharina.Koeniger@posteo.de</a></p>
+</section>
+
+<footer>
+  © Katharina Königer · Alle Rechte vorbehalten
+</footer>
+
+
+<script>
+  // Lädt konzerte.json und erzeugt daraus automatisch Konzertkarten.
+  // Wichtig: Beim lokalen Test bitte über http://localhost öffnen, nicht per Doppelklick.
+  document.addEventListener('DOMContentLoaded', function () {
+    const bereich = document.getElementById('konzert-bereich');
+    const fallbackBild = 'images/konzert1.jpg';
+    const heute = new Date();
+    heute.setHours(0, 0, 0, 0);
+
+    const monate = {
+      'januar': 0, 'jan': 0,
+      'februar': 1, 'feb': 1,
+      'märz': 2, 'maerz': 2, 'mrz': 2,
+      'april': 3, 'apr': 3,
+      'mai': 4,
+      'juni': 5, 'jun': 5,
+      'juli': 6, 'jul': 6,
+      'august': 7, 'aug': 7,
+      'september': 8, 'sep': 8,
+      'oktober': 9, 'okt': 9,
+      'november': 10, 'nov': 10,
+      'dezember': 11, 'dez': 11
+    };
+
+    function text(wert) {
+      return (wert || '').toString().trim();
+    }
+
+    function datumLesen(datumText) {
+      const wert = text(datumText).toLowerCase().replace('.', '').replace('ä', 'ae');
+      if (!wert) return null;
+
+      // Beispiele: 12. Oktober 2026, 12 Oktober 2026, Oktober 2026, 2026-10-12
+      const iso = wert.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+      if (iso) return new Date(Number(iso[1]), Number(iso[2]) - 1, Number(iso[3]));
+
+      const mitTag = wert.match(/^(\d{1,2})\s+([a-z]+)\s+(\d{4})$/);
+      if (mitTag && monate[mitTag[2]] !== undefined) {
+        return new Date(Number(mitTag[3]), monate[mitTag[2]], Number(mitTag[1]));
+      }
+
+      const nurMonat = wert.match(/^([a-z]+)\s+(\d{4})$/);
+      if (nurMonat && monate[nurMonat[1]] !== undefined) {
+        return new Date(Number(nurMonat[2]), monate[nurMonat[1]], 1);
+      }
+
+      const nurJahr = wert.match(/^(\d{4})$/);
+      if (nurJahr) return new Date(Number(nurJahr[1]), 0, 1);
+
+      return null;
+    }
+
+    function istVergangen(konzert) {
+      const d = datumLesen(konzert.datum);
+      if (!d) return false;
+      return d < heute;
+    }
+
+    function sortiereKonzerte(a, b, richtung) {
+      const da = datumLesen(a.datum);
+      const db = datumLesen(b.datum);
+      if (!da && !db) return 0;
+      if (!da) return 1;
+      if (!db) return -1;
+      return richtung === 'absteigend' ? db - da : da - db;
+    }
+
+    function karteBauen(konzert) {
+      const karte = document.createElement('article');
+      karte.className = 'konzert-karte';
+      karte.tabIndex = 0;
+
+      const bild = text(konzert.bild) || fallbackBild;
+      const titel = text(konzert.titel) || 'Konzert';
+      const datum = text(konzert.datum);
+      const ort = text(konzert.ort);
+      const beschreibung = text(konzert.beschreibung);
+
+      karte.innerHTML = `
+        <img src="${bild}" alt="${titel}">
+        <div class="konzert-inhalt">
+          ${datum ? `<span class="konzert-datum">${datum}</span>` : ''}
+          <h4 class="konzert-titel">${titel}</h4>
+          ${ort ? `<p class="konzert-ort">${ort}</p>` : ''}
+          ${beschreibung ? `<p class="konzert-beschreibung">${beschreibung}</p>` : ''}
+        </div>
+      `;
+
+      karte.addEventListener('click', function () { detailAnzeigen(konzert); });
+      karte.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          detailAnzeigen(konzert);
+        }
+      });
+      return karte;
+    }
+
+    function gruppeBauen(titel, konzerte, leertext) {
+      const gruppe = document.createElement('div');
+      gruppe.className = 'konzert-gruppe';
+      gruppe.innerHTML = `<h3>${titel}</h3>`;
+
+      if (konzerte.length === 0) {
+        const leer = document.createElement('p');
+        leer.className = 'konzert-leer';
+        leer.textContent = leertext;
+        gruppe.appendChild(leer);
+        return gruppe;
+      }
+
+      const grid = document.createElement('div');
+      grid.className = 'konzert-grid';
+      konzerte.forEach(function (konzert) {
+        grid.appendChild(karteBauen(konzert));
+      });
+      gruppe.appendChild(grid);
+      return gruppe;
+    }
+
+    function detailAnzeigen(konzert) {
+      const modal = document.getElementById('konzert-modal');
+      const bild = text(konzert.bild) || fallbackBild;
+      const titel = text(konzert.titel) || 'Konzert';
+      const datum = text(konzert.datum);
+      const ort = text(konzert.ort);
+      const beschreibung = text(konzert.beschreibung) || 'Weitere Informationen folgen.';
+
+      modal.querySelector('img').src = bild;
+      modal.querySelector('img').alt = titel;
+      modal.querySelector('h3').textContent = titel;
+      modal.querySelector('.modal-datum').textContent = datum;
+      modal.querySelector('.modal-ort').textContent = ort;
+      modal.querySelector('.modal-beschreibung').textContent = beschreibung;
+      modal.classList.add('offen');
+    }
+
+    function modalEinrichten() {
+      const modal = document.createElement('div');
+      modal.id = 'konzert-modal';
+      modal.className = 'modal';
+      modal.innerHTML = `
+        <div class="modal-inhalt" role="dialog" aria-modal="true" aria-label="Konzertdetails">
+          <button class="modal-schliessen" type="button" aria-label="Schließen">×</button>
+          <img src="${fallbackBild}" alt="Konzertbild">
+          <div class="modal-text">
+            <p class="konzert-datum modal-datum"></p>
+            <h3></h3>
+            <p class="konzert-ort modal-ort"></p>
+            <p class="modal-beschreibung"></p>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+      modal.querySelector('.modal-schliessen').addEventListener('click', function () {
+        modal.classList.remove('offen');
+      });
+      modal.addEventListener('click', function (event) {
+        if (event.target === modal) modal.classList.remove('offen');
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') modal.classList.remove('offen');
+      });
+    }
+
+    function zeigeKonzerte(daten) {
+      bereich.innerHTML = '';
+
+      if (!Array.isArray(daten) || daten.length === 0) {
+        bereich.innerHTML = '<p class="hinweis">Aktuell sind keine Konzerte eingetragen.</p>';
+        return;
+      }
+
+      const echteKonzerte = daten.filter(function (eintrag) {
+        return text(eintrag.titel).toLowerCase() !== 'konzertorte';
+      });
+      const konzertorte = daten.find(function (eintrag) {
+        return text(eintrag.titel).toLowerCase() === 'konzertorte';
+      });
+
+      const kommende = echteKonzerte.filter(function (k) { return !istVergangen(k); }).sort(function (a, b) {
+        return sortiereKonzerte(a, b, 'aufsteigend');
+      });
+      const vergangene = echteKonzerte.filter(istVergangen).sort(function (a, b) {
+        return sortiereKonzerte(a, b, 'absteigend');
+      });
+
+      bereich.appendChild(gruppeBauen('Kommende Konzerte', kommende, 'Aktuell sind keine kommenden Konzerte eingetragen.'));
+      bereich.appendChild(gruppeBauen('Vergangene Konzerte', vergangene, 'Vergangene Konzerte werden hier angezeigt.'));
+
+      if (konzertorte && text(konzertorte.ort)) {
+        const orte = document.createElement('div');
+        orte.className = 'konzertorte-liste';
+        orte.innerHTML = `<strong>Konzertorte:</strong> ${text(konzertorte.ort)}`;
+        bereich.appendChild(orte);
+      }
+    }
+
+    modalEinrichten();
+
+    fetch('konzerte.json', { cache: 'no-store' })
+      .then(function (antwort) {
+        if (!antwort.ok) throw new Error('konzerte.json konnte nicht geladen werden.');
+        return antwort.json();
+      })
+      .then(zeigeKonzerte)
+      .catch(function (fehler) {
+        console.error(fehler);
+        bereich.innerHTML = '<p class="hinweis">Die Datei konzerte.json konnte nicht geladen werden. Wichtig: index.html und konzerte.json müssen im gleichen Ordner liegen. Lokal bitte über einen kleinen Webserver öffnen, nicht per Doppelklick.</p>';
+      });
+  });
+</script>
+
+</body>
+</html>
