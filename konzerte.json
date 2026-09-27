@@ -22,17 +22,17 @@
   },
   {
     "datum": "2019",
-    "sortierdatum": "2019-09-01",
-    "titel": "Jubiläumskonzert der Kirchenstiftung St. Wolfgang",
-    "ort": "St. Wolfgangskirche, Röthenbach bei St. Wolfgang",
-    "beschreibung": "Barockkonzert zum zehnjährigen Jubiläum der Kirchenstiftung. Katharina Königer als Sopran-Solistin mit Anna Katharina von Segnitz, Violine, Ute Königer, Truhenorgel, und Klaus Martius, Laute. Unter anderem mit „Se l’aura spira“ von Girolamo Frescobaldi und einer dreisätzigen Kantate von Francesco Mancini."
-  },
-  {
-    "datum": "2019",
     "sortierdatum": "2019-06-01",
     "titel": "Internationale Orgelwoche Nürnberg – ION Nacht",
     "ort": "Nürnberg",
     "beschreibung": "Vokalquartett der Hochschule für Musik Nürnberg im Rahmen der ION Nacht. Katharina Königer übernahm die musikalische Leitung des Vokalquartetts."
+  },
+  {
+    "datum": "2019",
+    "sortierdatum": "2019-09-01",
+    "titel": "Jubiläumskonzert der Kirchenstiftung St. Wolfgang",
+    "ort": "St. Wolfgangskirche, Röthenbach bei St. Wolfgang",
+    "beschreibung": "Barockkonzert zum zehnjährigen Jubiläum der Kirchenstiftung. Katharina Königer als Sopran-Solistin mit Anna Katharina von Segnitz, Violine, Ute Königer, Truhenorgel, und Klaus Martius, Laute. Unter anderem mit „Se l’aura spira“ von Girolamo Frescobaldi und einer dreisätzigen Kantate von Francesco Mancini."
   },
   {
     "datum": "1. November 2020",
@@ -47,6 +47,57 @@
     "titel": "Kantatensonntag",
     "ort": "Stadtkirche Neustadt an der Aisch",
     "beschreibung": "Gottesdienste zum Kantatensonntag um 9.30 und 10.30 Uhr mit der Schola Variabilum und Katharina Königer als Solo-Sopran. Das aufgeführte Werk ist noch zu ergänzen."
+  },
+  {
+    "datum": "19. Dezember 2021",
+    "sortierdatum": "2021-12-19",
+    "titel": "Musikalische Andacht – Praetorius & Bach",
+    "ort": "Stadtkirche St. Johannes, Neustadt an der Aisch",
+    "beschreibung": "Musikalische Andacht mit Werken von Michael Praetorius sowie Ausschnitten aus Johann Sebastian Bachs Weihnachtsoratorium I–III. Katharina Königer, Sopran; Thilo Stute, Tenor; Patryk Rybarczyk, Bass; Mitglieder der Kantorei und des Kinderchores, Neustädter Kammerorchester; Leitung: Christoph Beyrer."
+  },
+  {
+    "datum": "10. April 2022",
+    "sortierdatum": "2022-04-10",
+    "titel": "J. S. Bach – Himmelskönig, sei willkommen & Poulenc – Passionsmotetten",
+    "ort": "Stadtkirche Neustadt an der Aisch",
+    "beschreibung": "Musikalische Andacht am Palmsonntag mit Johann Sebastian Bachs Kantate „Himmelskönig, sei willkommen“ BWV 182, Francis Poulencs „Quatre motets pour un temps de pénitence“ und Melchior Francks „Da pacem Domine“. Katharina Königer sang im Vocalensemble Unicum und übernahm eine der Solo-Stimmen; Leitung: Christoph Beyrer."
+  },
+  {
+    "datum": "15. Mai 2022",
+    "sortierdatum": "2022-05-15",
+    "titel": "Kantatensonntag – Musik im Gottesdienst",
+    "ort": "Stadtkirche Neustadt an der Aisch",
+    "beschreibung": "Musik im Gottesdienst zum Kantatensonntag mit Katharina Königer, Sopran, der Neustädter Kantorei und dem Kammerorchester."
+  },
+  {
+    "datum": "18. Dezember 2022",
+    "sortierdatum": "2022-12-18",
+    "titel": "Die Hirten in der weihnachtlichen Musik",
+    "ort": "Stadtkirche St. Johannes, Neustadt an der Aisch",
+    "beschreibung": "Weihnachtskonzert mit Gottfried August Homilius’ Kantate „Auf, auf, ihr Herzen, seid bereit“, zwei Sätzen aus Jakub Jan Rybas „Böhmischer Hirtenmesse“ und Teil II aus Johann Sebastian Bachs Weihnachtsoratorium. Katharina Königer, Sopran; Lars Tappert, Tenor; Patryk Rybarczyk, Bass; Kantorei und Neustädter Kammerorchester; Leitung: Christoph Beyrer."
+  },
+  {
+    "datum": "7. April 2023",
+    "sortierdatum": "2023-04-07",
+    "titel": "Joseph Haydn – Stabat Mater",
+    "ort": "Stadtkirche Neustadt an der Aisch",
+    "beschreibung": "Aufführung von Joseph Haydns „Stabat Mater“ am Karfreitag mit Katharina Königer als Sopran-Solistin, der Neustädter Kantorei und Kammerorchester unter Leitung von Christoph Beyrer.",
+    "bild": "images/konzerte/2023-04-07_haydn_stabat_mater.jpg"
+  },
+  {
+    "datum": "17. Dezember 2023",
+    "sortierdatum": "2023-12-17",
+    "titel": "Der Stern von Bethlehem – Saint-Saëns & Rheinberger",
+    "ort": "Stadtkirche St. Johannes, Neustadt an der Aisch",
+    "beschreibung": "Weihnachtskonzert mit Ausschnitten aus Camille Saint-Saëns’ „Oratorio de Noël“ op. 12 und Josef Gabriel Rheinbergers „Der Stern von Bethlehem“ op. 164. Katharina Königer, Sopran; Lautaro Nolli, Bariton; Claire Augier de Lajallet, Harfe; Thomas Flohr, Orgel; Kantorei, Jugendchor und Neustädter Kammerorchester; Leitung: Christoph Beyrer."
+  },
+  {
+    "datum": "29. März 2024",
+    "sortierdatum": "2024-03-29",
+    "titel": "J. S. Bach – Johannes-Passion",
+    "ort": "Stadtkirche St. Johannis, Neustadt an der Aisch",
+    "beschreibung": "Johann Sebastian Bachs Johannes-Passion am Karfreitag. Katharina Königer, Sopran; Stefanie Weidmann, Alt; Michael Schaffrath, Tenor; Patryk Rybarczyk, Bass; Neustädter Kantorei und Chorgäste; Leitung: Christoph Beyrer.",
+    "bild": "images/konzerte/2024-03-29_bach_johannes_passion.jpg"
   },
   {
     "datum": "28. April 2024",
@@ -66,16 +117,10 @@
   {
     "datum": "22. Dezember 2024",
     "sortierdatum": "2024-12-22",
-    "titel": "Weihnachtskonzert – Händel, Hammerschmidt & Mendelssohn",
+    "titel": "Weihnachtskonzert – Hammerschmidt, Händel & Mendelssohn",
     "ort": "Stadtkirche Neustadt an der Aisch",
-    "beschreibung": "Weihnachtskonzert mit Evangelischer Kantorei und Kammerorchester unter Leitung von Christoph Beyrer. Werke von Andreas Hammerschmidt, Georg Friedrich Händel und Felix Mendelssohn Bartholdy. Katharina Königer, Sopran; Thilo Stute, Tenor; Patryk Rybarczyk, Bass."
-  },
-  {
-    "datum": "15. März 2025",
-    "sortierdatum": "2025-03-15",
-    "titel": "Konzert mit Kantorei & Projektchor Unicum",
-    "ort": "Stadtkirche Neustadt an der Aisch",
-    "beschreibung": "Konzert mit Katharina Königer, Sopran, Dorothea Zimmermann, Alt, Juan Carlos Falcon, Tenor, Holger Ohlmann, Bass, der Evangelischen Kantorei Neustadt, dem Projektchor Unicum und Orchester unter Leitung von Christoph Beyrer."
+    "beschreibung": "Weihnachtskonzert mit Andreas Hammerschmidts „Wo ist der neugeborne König der Juden“, dem Weihnachtsteil aus Georg Friedrich Händels „Messiah“ HWV 56 und Felix Mendelssohn Bartholdys Choralkantate „Vom Himmel hoch“. Katharina Königer, Sopran; Thilo Stute, Tenor; Patryk Rybarczyk, Bass; Evangelische Kantorei und Orchester Neustadt; Leitung: Christoph Beyrer.",
+    "bild": "images/konzerte/2024-12-22_weihnachtskonzert.jpg"
   },
   {
     "datum": "6. April 2025",
@@ -84,6 +129,14 @@
     "ort": "St. Kilian, Bad Windsheim",
     "beschreibung": "Johann Sebastian Bachs Johannes-Passion mit Katharina Königer als Sopran-Solistin.",
     "bild": "images/konzert1.jpg"
+  },
+  {
+    "datum": "18. April 2025",
+    "sortierdatum": "2025-04-18",
+    "titel": "J. S. Bach – Matthäus-Passion",
+    "ort": "Stadtkirche St. Johannis, Neustadt an der Aisch",
+    "beschreibung": "Gekürzte Fassung von Johann Sebastian Bachs Matthäus-Passion am Karfreitag. Katharina Königer, Sopran; Dorothea Zimmermann, Alt; Juan Carlos Falcon, Tenor; Holger Ohlmann, Bass; Laura Ion, Solo-Violine; Thomas Flohr, Orgel; Evangelische Kantorei Neustadt und Projektchor Unicum; Leitung: Christoph Beyrer.",
+    "bild": "images/konzerte/2025-04-18_bach_matthaeus_passion.jpg"
   },
   {
     "datum": "26. Oktober 2025",
